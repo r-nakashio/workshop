@@ -10,7 +10,8 @@
   "remoteEnv": {
     "DATABASE_HOST": "db",
     "DATABASE_USER": "postgres",
-    "DATABASE_PASSWORD": "password"
+    "DATABASE_PASSWORD": "password",
+    "RAILS_DEVELOPMENT_HOSTS": ".githubpreview.dev,.preview.app.github.dev,.app.github.dev"
   },
   
   "waitFor": "postCreateCommand",
@@ -28,8 +29,11 @@
     }
   },
   "forwardPorts": [3000],
-  // ポートを明示的にホストにバインド
-  "runArgs": ["--network=host"],
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    }
+  },
 
   "overrideCommand": false,
   "remoteUser": "root"
