@@ -4,30 +4,40 @@ B3 のワークショップで用いるサンプルコード
 
 # 起動手順
 
+## 0. リポジトリをフォークする。
+###1. Fork するリポジトリを開く
 
-## 0. リポジトリの準備
+先生が指定したリポジトリ（https://github.com/r-nakashio/workshop/tree/workshop2025）にアクセスします。
+
+###2. 右上の「Fork」ボタンを押す
+
+GitHub のリポジトリページ右上に Fork ボタン があります。
+
+###3. Fork 先を選ぶ
+
+自分の GitHub アカウントを選びます。
+
+mainブランチのみforkしますか？のチェックを外す。
+
+リポジトリ名を変更したい場合はここで編集できます（通常はそのままでOK）。
 
 
-リモートリポジトリをcloneします。
+## 1. Codespacesを起動する
 
-```
-git clone https://github.com/haw/workshop.git
-```
+###1.リポジトリページの右上にある緑色の 「Code」 ボタンをクリックします。
 
-リポジトリに入ってワークショップのブランチをcheckoutする
-```
-cd workshop
-git checkout -b cli origin/workshop20xx (※20xxの部分は年度毎に変更)
-git status でブランチがorigin/workshop20xx であることを確認
-```
+###2.「Codespaces」 タブに切り替えて、「Create codespace on main」 をクリックします。
 
-## 1. TapyrusAPI の準備
+少し時間がかかります。
+
+
+## 2. TapyrusAPI の準備
 
 クライアント証明書のPKCS12ファイルを配置します。
 階層は以下のようになります。
 
 ```
-- workshop
+- myapp
 |-- app
 |-- bin
 |-- config
@@ -36,7 +46,7 @@ git status でブランチがorigin/workshop20xx であることを確認
 ```
 ### 1.1. クライアント証明書
 
-Google ドライブで共有する `tapyrus_api_client_cert.p12` を `workshop` ディレクトリに置きます。
+Google ドライブで共有する `tapyrus_api_client_cert.p12` を `myapp` ディレクトリに置きます。
 
 TapyrusAPI のクライアント証明書は API 利用のための認証情報になります。
 
@@ -45,45 +55,21 @@ TapyrusAPI のクライアント証明書は API 利用のための認証情報�
 ```bash
 cp .env.sample .env
 ```
+注意点：bashとcodespaces:serverというターミナルが開くが、bashの方で実行すること。
 
 `.env`ファイルを編集します。  
 アクセストークン, TapyrusAPI エンドポイント, クライアント証明書のパスフレーズはハンズオン時にお伝えします。  
 
-## 2. Web App を起動する
+###1.3. 設定したファイルを読み込ませる
+crtl+shift+pを押してrebuildと入力し、codespaces: Rebuild Containerを選択する。
 
-Docker で用意された環境を起動します。
+緑色のRebuildボタンを押す。
 
-### 2.1. データベースを作成する
+再ビルドされ設定ファイルが読み込まれます。
 
-- 初回起動時はデータベースがないため作成する必要があります。
-- 以下のコマンドを実行しデータベースを作成します。
-- ※WSL 2(Ubuntu)の人はdockerコマンドには sudo をつける
-```
-docker compose build
-docker compose run --rm web bin/rails db:create
-```
+## 3. Web App を起動する
 
-### 2.2. アプリケーションを起動する
-
-```
-docker compose up --build
-```
-
-
-起動したら `http://localhost:3000` にアクセスすることでアプリケーションを使用できます。
-
- ※サーバー実行中は操作出来なくなるので、コマンド作業を続ける時は別のターミナルを開く
-
-### 2.3. Docker コンテナとデータベースを削除する
-
-このコマンドは環境を再構築したい場合に実行してください。
-Dockerのコンテナなど構築した環境を全て削除します。
-
-なお、TapyrusAPI を使ってブロックチェーンに書き込んだトランザクションは消えません。
-
-```
-docker compose down -v --remove-orphans
-```
+ターミナルのcodespaces:serverにてサーバーが起動しているので、URLにアクセスする。
 
 # ワーク
 
