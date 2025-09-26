@@ -5,15 +5,15 @@ B3 のワークショップで用いるサンプルコード
 # 起動手順
 
 ## 0. リポジトリをフォークする。
-###1. Fork するリポジトリを開く
+###　1. Fork するリポジトリを開く
 
 先生が指定したリポジトリ（https://github.com/r-nakashio/workshop/tree/workshop2025）にアクセスします。
 
-###2. 右上の「Fork」ボタンを押す
+###　2. 右上の「Fork」ボタンを押す
 
 GitHub のリポジトリページ右上に Fork ボタン があります。
 
-###3. Fork 先を選ぶ
+###　3. Fork 先を選ぶ
 
 自分の GitHub アカウントを選びます。
 
@@ -24,9 +24,9 @@ mainブランチのみforkしますか？のチェックを外す。
 
 ## 1. Codespacesを起動する
 
-###1.リポジトリページの右上にある緑色の 「Code」 ボタンをクリックします。
+###　1.リポジトリページの右上にある緑色の 「Code」 ボタンをクリックします。
 
-###2.「Codespaces」 タブに切り替えて、「Create codespace on main」 をクリックします。
+###　2.「Codespaces」 タブに切り替えて、「Create codespace on main」 をクリックします。
 
 少し時間がかかります。
 
@@ -60,7 +60,7 @@ cp .env.sample .env
 `.env`ファイルを編集します。  
 アクセストークン, TapyrusAPI エンドポイント, クライアント証明書のパスフレーズはハンズオン時にお伝えします。  
 
-###1.3. 設定したファイルを読み込ませる
+###　1.3. 設定したファイルを読み込ませる
 crtl+shift+pを押してrebuildと入力し、codespaces: Rebuild Containerを選択する。
 
 緑色のRebuildボタンを押す。
