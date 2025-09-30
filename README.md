@@ -30,28 +30,36 @@ B3 のワークショップで用いるサンプルコード
 
 Google ドライブで共有する `tapyrus_api_client_cert.p12` を `myapp` ディレクトリに置きます。
 
+ダウンロードしたクライアント証明書を赤枠の部分にドラッグ&ドロップします。
+![](./doc/images/readme/01.png)
+
 TapyrusAPI のクライアント証明書は API 利用のための認証情報になります。
 
 ### 1.2. アクセストークン, TapyrusAPI エンドポイント, クライアント証明書のパスフレーズ
+画面下部のターミナルで以下のコマンドを実行し、設定ファイルを作成します。
 
 ```bash
 cp .env.sample .env
 ```
-注意点：bashとcodespaces:serverというターミナルが開くが、bashの方で実行すること。
+
+
+**※ 注意点：bashとcodespaces:serverというターミナルが開くが、bashと書かれている方で実行すること。**
+![](./doc/images/readme/02.png)
 
 `.env`ファイルを編集します。  
 アクセストークン, TapyrusAPI エンドポイント, クライアント証明書のパスフレーズはハンズオン時にお伝えします。  
 
 ### 1.3. 設定したファイルを読み込ませる
-crtl+shift+pを押してrebuildと入力し、codespaces: Rebuild Containerを選択する。
+左下の「Codespaces: ...」と書かれた青い部分をクリックして、codespaces: Rebuild Containerを選択する。
+![](./doc/images/readme/03.png)
 
-緑色のRebuildボタンを押す。
-
+青色のRebuildボタンを押す。
 再ビルドされ設定ファイルが読み込まれます。
 
 ## 3. Web App を起動する
 
-ターミナルのcodespaces:serverにてサーバーが起動しているので、URLにアクセスする。
+画面下部の「ポート」にてサーバーが起動しているので、「転送されたアドレス」をクリックしてURLにアクセスする。
+![](./doc/images/readme/04.png)
 
 # ワーク
 
