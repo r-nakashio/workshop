@@ -6,9 +6,9 @@ B3 のワークショップで用いるサンプルコード
 
 ## 1. Codespacesを起動する
 
-### 1.リポジトリページの右上にある緑色の 「Code」 ボタンをクリックします。
+### 1.1.リポジトリページの右上にある緑色の 「Code」 ボタンをクリックします。
 
-### 2.「Codespaces」 タブに切り替えて、「Create codespace on main」 をクリックします。
+### 1.2.「Codespaces」 タブに切り替えて、「Create codespace on main」 をクリックします。
 
 少し時間がかかります。
 
@@ -26,7 +26,7 @@ B3 のワークショップで用いるサンプルコード
 ....
 |-- tapyrus_api_client_cert.p12
 ```
-### 1.1. クライアント証明書
+### 2.1. クライアント証明書
 
 Google ドライブで共有する `tapyrus_api_client_cert.p12` を `myapp` ディレクトリに置きます。
 
@@ -35,7 +35,7 @@ Google ドライブで共有する `tapyrus_api_client_cert.p12` を `myapp` デ
 
 TapyrusAPI のクライアント証明書は API 利用のための認証情報になります。
 
-### 1.2. アクセストークン, TapyrusAPI エンドポイント, クライアント証明書のパスフレーズ
+### 2.2. アクセストークン, TapyrusAPI エンドポイント, クライアント証明書のパスフレーズ
 画面下部のターミナルで以下のコマンドを実行し、設定ファイルを作成します。
 
 ```bash
@@ -49,7 +49,7 @@ cp .env.sample .env
 `.env`ファイルを編集します。  
 アクセストークン, TapyrusAPI エンドポイント, クライアント証明書のパスフレーズはハンズオン時にお伝えします。  
 
-### 1.3. 設定したファイルを読み込ませる
+### 2.3. 設定したファイルを読み込ませる
 左下の「Codespaces: ...」と書かれた青い部分をクリックして、codespaces: Rebuild Containerを選択する。
 ![](./doc/images/readme/03.png)
 
